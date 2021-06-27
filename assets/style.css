@@ -1,0 +1,371 @@
+*{
+    margin: 0;
+    padding: 0;
+    scroll-behavior: smooth;
+}
+
+body{
+    overflow-x: hidden;
+}
+
+section{
+    padding-top: 4em;
+}
+
+.toup{
+    position: fixed;
+    bottom: 20px;
+    right: 30px;
+    background-color: greenyellow;
+    color: #ffffff;
+    padding: 10px 15px;
+    border-radius: 50%;
+    z-index: 2;
+    opacity: 0;
+    transition: all 0.5s;
+}
+.toup:hover{
+    background-color: green;
+    color: white;
+}
+
+
+/* navbar */
+nav{
+    background-color: rgba(1, 56, 1, 0.904);
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    color: white;
+    height: 50px;
+}
+.logo{
+    display: flex;
+    width: 10%;
+    justify-content: space-around;
+    align-items: center;
+}
+.logo span{
+    display: inline-block;
+    width: 3px;
+    height: 30px;
+    background-color: greenyellow;
+}
+
+nav ul{
+    margin: 0;
+    display: flex;
+    list-style: none;
+    align-items: center;
+    width: 50%;
+    height: 100%;
+    justify-content: space-between;
+}
+nav ul li a{
+    color: white;
+    text-transform: uppercase;
+    font-size: small;
+    text-decoration: none;
+}
+nav ul li a:hover{
+    color: greenyellow;
+    text-decoration: none;
+}
+
+/* humberger menu */
+.humberger-menu{
+    height: 25px;
+    display: none;
+    flex-direction: column;
+    justify-content: space-between;
+    position: relative;
+}
+.humberger-menu span{
+    display: block;
+    width: 28px;
+    height: 4px;
+    border-radius: 3px;
+    background-color: #ffffff;
+    transition: all 0.5s;
+}
+.humberger-menu input{
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 2;
+    opacity: 0;
+}
+
+/* animasi silang */
+.humberger-menu span:nth-child(2){
+    transform-origin: 0 0;
+}
+.humberger-menu input[type='checkbox']:checked ~ span:nth-child(2){
+    transform: rotate(45deg) translate(0, -1px);
+}
+
+.humberger-menu input[type='checkbox']:checked ~ span:nth-child(3){
+    transform: scale(0);
+    opacity: 0;
+}
+
+.humberger-menu span:nth-child(4){
+    transform-origin: 0 100%;
+}
+.humberger-menu input[type='checkbox']:checked ~ span:nth-child(4){
+    transform: rotate(-45deg) translate(2px, -1px);
+}
+/* end animasi silang */
+/* end humberger menu */
+/* end navbar */
+
+/* slider */
+#carouselNavbar .carousel-inner .carousel-item img{
+    height: 650px;
+}
+#carouselNavbar .carousel-inner .carousel-item{
+    position: relative;
+}
+#carouselNavbar .carousel-inner .carousel-item .carousel-caption{
+    background-color: rgba(85, 85, 85, 0.459);
+    text-align: start;
+    width: 40%;
+    position: absolute;
+    bottom: 8%;
+    left: 55%;
+}
+/* end slider */
+
+/* info */
+.info{
+    background-color: #222;
+    color: #eaeaea;
+}
+.info h4{
+    font-weight: 400;
+}
+.info span{
+    color: greenyellow;
+    font-size: xx-large;
+}
+.info p{
+    font-size: small;
+}
+/* end info */
+
+/* tentang kami */
+#tentang-kami .card .card-body{
+    position: relative;
+}
+#tentang-kami .card p{
+    font-size: 14px;
+}
+#tentang-kami .card span{
+    position: absolute;
+    top: -15%;
+    left: 45%;
+    border: 2px solid white;
+    font-size: medium;
+    padding: 10px 15px;
+    background-color: greenyellow;
+    border-radius: 50%;
+}
+/* end tentang kami */
+
+/* portfolio */
+#portfolio{
+    background-color: #f7f7f7;
+}
+#portfolio ul{
+    display: flex;
+    justify-content: space-between;
+    list-style: none;
+    width: 40%;
+    margin: 0 auto;
+}
+#portfolio ul li a{
+    color: white;
+    text-transform: uppercase;
+    font-size: small;
+}
+#portfolio .card-title{
+    position: relative;
+}
+#portfolio .card-title img{
+    height: 250px;
+}
+#portfolio .modal img{
+    width: 40%;
+}
+#portfolio .card-title .popup{
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.466);
+    height: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    opacity: 0;
+    transition: all 0.5s;
+}
+#portfolio .card-title:hover .popup{
+    height: 100%;
+    opacity: 1;
+}
+
+/* kategori */
+#portfolio .all{
+    display: none;
+    transition: all 0.5s ease;
+}
+#portfolio .all.show{
+    display: inherit;
+}
+/* end kategori */
+/* end portfolio */
+
+/* testimonal */
+#testimonal{
+    background-color: #f7f7f7;
+}
+
+#testimonal .carousel-inner .carousel-item{
+    position: relative;
+}
+#testimonal .carousel-inner .carousel-item .carousel-caption{
+    position: absolute;
+    bottom: 10%;
+}
+#testimonal .carousel-inner img.w-100{
+    height: 500px;
+    opacity: 0;
+}
+#testimonal .carousel-caption{
+    color: black;
+}
+/* end testimonal */
+
+/* tim */
+#tim .teams{
+    position: relative;   
+}
+#tim .teams .caption{
+    position: absolute;   
+    top: 0;
+    right: 0;
+    left: 0;
+    bottom: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.733);
+    color: #eaeaea;
+    font-weight: 500;
+    opacity: 0;
+    transition: ease-in 0.5s;
+}
+#tim .teams .caption span{
+    font-weight: 400;
+    color: #bbb;
+    font-size: small;
+}
+
+#tim .teams:hover .caption{
+    opacity: 1;
+}
+/* end tim */
+
+/* hubungi */
+#hubungi{
+    background-color: #f7f7f7;
+}
+#hubungi .col-md-12 .btns{
+    background-color: rgb(0, 255, 0);
+    color: #ffffff;
+    border: none;
+    padding: 10px 30px;
+}
+#hubungi .col-md-12 .btns:hover{
+    background-color: rgb(3, 199, 3);
+}
+#hubungi .card span{
+    font-size: xx-large;
+}
+/* end hubungi */
+
+/* footer */
+footer{
+    color: #eaeaea;
+    background-color: #111111;
+    font-size: small;
+}
+/* end footer */
+
+
+/* tablet */
+@media (max-width: 768px){
+    nav ul{
+        width: 60%;
+    }
+
+    /* slider */
+    /* slider */
+    #carouselNavbar .carousel-inner .carousel-item .carousel-caption{
+        width: 80%;
+        bottom: 8%;
+        left: 10%;
+    }
+    /* end Slider */
+    /* end slider */
+
+    /* portfolio */
+    #portfolio ul{
+        flex-direction: column;
+    }
+    #portfolio ul li{
+        margin-bottom: 10px;
+    }
+    /* end portfolio */
+}
+
+/* smartphone */
+@media (max-width: 568px){
+    /* navbar */
+    nav ul {
+        background-color: #555;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 50%;
+        height: 100vh;
+        flex-direction: column;
+        justify-content: space-evenly;
+        align-items: flex-start;
+        padding: 20px;
+        transform: translateX(-100%);
+        opacity: 0;
+        transition: all 0.5s;
+    }    
+
+    nav ul.show{
+        transform: translateX(0);
+        opacity: 1;
+    }
+
+    .humberger-menu{
+        display: flex;
+    }
+    /* end navbar */
+
+    /* slider */
+    #carouselNavbar .carousel-inner .carousel-item .carousel-caption{
+        width: 95%;
+        bottom: 8%;
+        left: 2%;
+        font-size: small;
+    }
+    /* end Slider */
+}
