@@ -334,10 +334,6 @@ footer{
 
 /* smartphone */
 @media (max-width: 568px){
-    /* carousel */
-    #carouselNavbar .carousel-inner .carousel-item img{
-        height: inherit;
-    }
     /* navbar */
     nav ul {
         background-color: #555;
